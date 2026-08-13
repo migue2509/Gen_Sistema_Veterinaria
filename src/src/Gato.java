@@ -37,6 +37,6 @@ public class Gato extends Animal implements Vacunable, Asegurable{
 
     @Override
     public String obtenerNumeroPoliza() {
-        return "";
+        return "POL-GATO-"+this.nombre.toUpperCase();
     }
 }
