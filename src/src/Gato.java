@@ -1,9 +1,13 @@
+import java.util.ArrayList;
+
 public class Gato extends Animal implements Vacunable, Asegurable{
     protected boolean esEsterilizado;
+    private ArrayList<String> vacunas;
 
-    public Gato(String nombre, int edad, String nombreDueno){
+    public Gato(String nombre, int edad, String nombreDueno, boolean esEsterilizado){
         super(nombre, edad, nombreDueno);
         this.esEsterilizado = esEsterilizado;
+        vacunas = new ArrayList<>();
     }
 
     @Override
@@ -13,12 +17,12 @@ public class Gato extends Animal implements Vacunable, Asegurable{
 
     @Override
     public void registrarVacuna(String nombre) {
-
+        vacunas.add(nombre);
     }
 
     @Override
     public int getVacunasAplicadas() {
-        return 0;
+        return vacunas.size();
     }
 
     @Override

@@ -1,9 +1,13 @@
+import java.util.ArrayList;
+
 public class Perro extends Animal implements Vacunable, Asegurable {
     protected String raza;
+    private ArrayList<String> vacunas;
 
-    public Perro(String nombre, int edad, String nombreDueno){
+    public Perro(String nombre, int edad, String nombreDueno, String raza){
         super(nombre, edad, nombreDueno);
         this.raza = raza;
+        vacunas = new ArrayList<>();
     }
 
     @Override
@@ -13,11 +17,12 @@ public class Perro extends Animal implements Vacunable, Asegurable {
 
     @Override
     public void registrarVacuna(String nombre) {
+        vacunas.add(nombre);
     }
 
     @Override
     public int getVacunasAplicadas() {
-        return 0;
+        return vacunas.size();
     }
 
     @Override
